@@ -1,6 +1,1 @@
-const showText = (): string => {
-    console.log(123)
-    return '123'
-}
-
-showText()
+document.body.innerText = 'Hello World'
