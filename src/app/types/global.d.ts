@@ -9,3 +9,7 @@ declare module "*.svg" {
     const SVG: React.FC<React.SVGProps<SVGSVGElement>>;
     export default SVG;
 }
+
+declare const __IS_DEV__: boolean;
+
+declare module "*.json";
