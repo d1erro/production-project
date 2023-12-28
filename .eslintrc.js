@@ -2,12 +2,13 @@ module.exports = {
     ignorePatterns: ["build", ".eslintrc.js"],
     env: {
         browser: true,
-        es2021: true
+        es2021: true,
+        jest: true
     },
     extends: [
         "standard-with-typescript",
         "plugin:react/recommended",
-        "plugin:i18next/recommended",
+        //"plugin:i18next/recommended",
     ],
     overrides: [
         {
