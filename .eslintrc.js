@@ -1,35 +1,37 @@
 module.exports = {
-    ignorePatterns: ["build", ".eslintrc.js"],
+    root: true,
+    ignorePatterns: ["build", "node_modules"],
     env: {
         browser: true,
         es2021: true,
         jest: true
     },
     extends: [
-        "standard-with-typescript",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
         "plugin:react/recommended",
+        "plugin:jest-dom/recommended",
         //"plugin:i18next/recommended",
     ],
+    parser: "@typescript-eslint/parser",
     overrides: [
         {
-            env: {
-                node: true
+            files: ["**/src/**/*.test.{ts,tsx}"],
+            rules: {
+                "i18next/no-literal-string": "off",
             },
-            files: [
-                ".eslintrc.{js,cjs}"
-            ],
-            parserOptions: {
-                sourceType: "script"
-            }
-        }
+        },
     ],
     parserOptions: {
         ecmaVersion: "latest",
         sourceType: "module"
     },
     plugins: [
+        "@typescript-eslint",
         "react",
         "i18next",
+        "jest-dom",
+        "@stylistic/ts"
     ],
     settings: {
         react: {
@@ -37,13 +39,28 @@ module.exports = {
         }
     },
     rules: {
-        'react/react-in-jsx-scope': 'off',
-        '@typescript-eslint/indent': ["error", 4],
-        '@typescript-eslint/explicit-function-return-type': 'off',
-        '@typescript-eslint/space-before-function-paren': 'off',
-        '@typescript-eslint/no-non-null-assertion': 'off',
-        '@typescript-eslint/no-misused-promises': 'off',
-        '@typescript-eslint/naming-convention': 'off',
+        "react/react-in-jsx-scope": "off",
+        "@typescript-eslint/indent": ["error", 4],
+        "object-curly-spacing": ["error", "always"],
+        "quotes": ["error", "double", {
+            "avoidEscape": true, "allowTemplateLiterals": true
+        }],
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/space-before-function-paren": "off",
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "@typescript-eslint/no-misused-promises": "off",
+        "@typescript-eslint/naming-convention": "off",
+        "jest-dom/prefer-checked": "error",
+        "jest-dom/prefer-enabled-disabled": "error",
+        "jest-dom/prefer-required": "error",
+        "jest-dom/prefer-to-have-attribute": "error",
+        "i18next/no-literal-string": [
+            "error",
+            {
+                markupOnly: true,
+                ignoreAttribute: ["data-testid"],
+            },
+        ],
     },
     globals: {
         __IS_DEV__: true
