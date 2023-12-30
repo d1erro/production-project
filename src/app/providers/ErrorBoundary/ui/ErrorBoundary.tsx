@@ -6,7 +6,7 @@ interface ErrorBoundaryProps {
 }
 
 interface ErrorBoundaryState {
-    hasError: any
+    hasError: boolean
 }
 
 class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
@@ -15,6 +15,7 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
         this.state = { hasError: false }
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     static getDerivedStateFromError(error: Error) {
         return { hasError: true }
     }

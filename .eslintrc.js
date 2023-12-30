@@ -1,6 +1,6 @@
 module.exports = {
     root: true,
-    ignorePatterns: ["build", "node_modules"],
+    ignorePatterns: [".eslintrc.js", "node_modules", "build/**/*.js"],
     env: {
         browser: true,
         es2021: true,
@@ -11,7 +11,7 @@ module.exports = {
         "plugin:@typescript-eslint/recommended",
         "plugin:react/recommended",
         "plugin:jest-dom/recommended",
-        //"plugin:i18next/recommended",
+        "plugin:storybook/recommended"
     ],
     parser: "@typescript-eslint/parser",
     overrides: [
@@ -31,7 +31,7 @@ module.exports = {
         "react",
         "i18next",
         "jest-dom",
-        "@stylistic/ts"
+        "@stylistic/ts",
     ],
     settings: {
         react: {
@@ -58,7 +58,7 @@ module.exports = {
             "error",
             {
                 markupOnly: true,
-                ignoreAttribute: ["data-testid"],
+                ignoreAttribute: ["data-testid", "to"],
             },
         ],
     },
