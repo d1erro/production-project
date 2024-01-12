@@ -2,3 +2,4 @@
 /build
 /.idea
 /storybook-static
+.env
