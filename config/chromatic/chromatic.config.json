@@ -1,8 +1,7 @@
 {
   "projectId": "Production project",
-  "autoAcceptChanges": "main",
-  "exitOnceUploaded": true,
   "externals": ["public/**"],
+  "junitReport": true,
   "onlyChanged": true,
   "storybookBuildDir": "./storybook-static"
 }

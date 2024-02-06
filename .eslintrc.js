@@ -11,7 +11,8 @@ module.exports = {
         "plugin:@typescript-eslint/recommended",
         "plugin:react/recommended",
         "plugin:jest-dom/recommended",
-        "plugin:storybook/recommended"
+        "plugin:storybook/recommended",
+        "plugin:react-hooks/recommended"
     ],
     parser: "@typescript-eslint/parser",
     overrides: [
@@ -32,6 +33,7 @@ module.exports = {
         "i18next",
         "jest-dom",
         "@stylistic/ts",
+        "react-hooks"
     ],
     settings: {
         react: {
@@ -61,6 +63,8 @@ module.exports = {
                 ignoreAttribute: ["data-testid", "to"],
             },
         ],
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "error"
     },
     globals: {
         __IS_DEV__: true

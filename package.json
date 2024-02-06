@@ -16,7 +16,7 @@
     "storybook:build": "storybook build -c ./config/storybook",
     "test:ui": "npx chromatic --config-file ./config/chromatic/chromatic.config.json",
     "test:ui:ok": "npx chromatic --auto-accept-changes --config-file ./config/chromatic/chromatic.config.json",
-    "test:ui:ci": "npx chromatic --exit-zero-on-changes --config-file ./config/chromatic/chromatic.config.json"
+    "test:ui:ci": "npx chromatic --config-file ./config/chromatic/chromatic.config.json"
   },
   "keywords": [],
   "author": "",
@@ -60,6 +60,7 @@
     "eslint-plugin-n": "^16.3.1",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.6.15",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.3",
